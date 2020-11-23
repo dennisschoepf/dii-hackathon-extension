@@ -1,6 +1,18 @@
 {
   "name": "DII Hackathon",
   "version": "0.1",
-  "description": "About Chrome extension that communicates with Adafruit.IO for the Design of Innovative Interactions course at University of Salzburg",
+  "description": "A Chrome extension that communicates with Adafruit.IO for the Design of Innovative Interactions course at University of Salzburg",
+  "permissions": ["storage"],
+  "background": {
+    "scripts": [
+      "dist/background/index.js"
+    ],
+    "persistent": false
+  },
+  "content": {
+    "scripts": [
+      "dist/frontend/index.js"
+    ]
+  },
   "manifest_version": 2
 }

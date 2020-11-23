@@ -1,0 +1,30 @@
+{
+  "name": "dii-hackathon-extension",
+  "version": "1.0.0",
+  "description": "Chrome extension that communicates with Adafruit.IO for the Design of Innovative Interactions course at University of Salzburg",
+  "main": "background.js",
+  "scripts": {
+    "clean": "rm -rf dist/background & rm -rf dist/frontend",
+    "serve": "parcel watch src/background/index.js --out-dir dist/background & parcel watch src/frontend/index.js --out-dir dist/frontend",
+    "build:back": "parcel build src/background/index.js --out-dir dist/background",
+    "build:front": "parcel build src/frontend/index.js --out-dir dist/frontend",
+    "build": "npm run clean && npm run build:back & npm run build:front",
+    "package": "npm run build && zip -r dii-hackathon-extension.zip dist/ manifest.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dennisschoepf/dii-hackathon-extension.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dennisschoepf/dii-hackathon-extension/issues"
+  },
+  "homepage": "https://github.com/dennisschoepf/dii-hackathon-extension#readme",
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "mqtt": "4.1.0",
+    "parcel": "^1.12.4"
+  }
+}
