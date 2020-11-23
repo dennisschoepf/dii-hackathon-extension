@@ -1,7 +1,7 @@
 import mqtt from "mqtt";
 
-const mqttHeartbeatTopic = "dennissc/feeds/heartbeat/json";
-const mqttTiltTopic = "dennissc/feeds/tilt-sensor/json";
+const mqttHeartbeatTopic = `${process.env.AIO_USERNAME}/feeds/heartbeat/json`;
+const mqttTiltTopic = `${process.env.AIO_USERNAME}/feeds/tilt-sensor/json`;
 const mqttEdnpoint = process.env.AIO_ENDPOINT;
 const mqttOptions = {
   port: Number(process.env.AIO_PORT),
