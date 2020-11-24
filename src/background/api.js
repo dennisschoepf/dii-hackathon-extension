@@ -12,6 +12,8 @@ const mqttOptions = {
 const client = mqtt.connect("mqtt://io.adafruit.com", mqttOptions);
 
 export function subscribeToAllSensors({ onHeartbeat, onTilt }) {
+  console.log(process.env.AIO_USERNAME);
+
   client.on("connect", () => {
     client.subscribe(mqttHeartbeatTopic);
     client.subscribe(mqttTiltTopic);
